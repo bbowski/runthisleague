@@ -24,22 +24,22 @@
     .header {
       width: 100%;
       padding: 20px;
-      background: #ffffff; /* crisp */
+      background: #ffffff;
       display: flex;
       flex-direction: column;
       align-items: center;
       position: sticky;
       top: 0;
       text-align: center;
-      border-bottom: 2px solid rgba(0,0,0,0.1);
+      border-bottom: 4px solid #cc0000; /* UGA RED */
     }
 
     body.dark .header {
       background: rgba(0,0,0,0.7);
-      border-bottom: 2px solid rgba(255,255,255,0.2);
+      border-bottom: 4px solid #cc0000;
     }
 
-    /* BELT IMAGE — no blur in light mode */
+    /* BELT IMAGE */
     .belt-logo-large {
       height: 160px;
       width: auto;
@@ -47,12 +47,11 @@
       filter: none;
     }
 
-    /* subtle glow only in dark mode */
     body.dark .belt-logo-large {
       filter: drop-shadow(0 0 6px rgba(255,255,255,0.4));
     }
 
-    /* DARKER METALLIC SILVER HEADER TEXT */
+    /* METALLIC SILVER HEADER TEXT */
     .header h2 {
       margin: 0;
       font-weight: 900;
@@ -65,15 +64,22 @@
       text-shadow: 0 0 3px rgba(0,0,0,0.35);
     }
 
+    /* CLEAN UGA RED BUTTON (NO GRADIENT) */
     #toggleDark {
       padding: 10px 15px;
-      background: #0078ff;
-      color: white;
-      border: none;
+      background: #cc0000;        /* UGA RED */
+      color: #fff;
+      border: 2px solid #000;     /* black accent */
       border-radius: 6px;
       cursor: pointer;
       font-size: 14px;
       margin-top: 10px;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+    #toggleDark:hover {
+      background: #e60000;        /* slightly brighter red */
+      color: #fff;
     }
 
     /* MAIN CARD */
@@ -124,6 +130,19 @@
       color: white;
     }
 
+    /* CLEAN UGA RED TABLE HEADERS */
+    th {
+      background: #cc0000;        /* UGA RED */
+      color: #fff;
+      text-transform: uppercase;
+      border-bottom: 2px solid #000; /* black accent */
+    }
+
+    body.dark th {
+      background: #990000;        /* darker red */
+      color: #fff;
+    }
+
     th, td {
       padding: 14px;
       border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -133,29 +152,23 @@
       border-bottom: 1px solid rgba(255,255,255,0.2);
     }
 
-    th {
-      background: #0078ff;
-      color: white;
-      text-transform: uppercase;
-    }
-
-    body.dark th {
-      background: #005fcc;
-    }
-
+    /* CLEAN UGA RED DOWNLOAD BUTTON */
     .download-btn {
       display: inline-block;
       padding: 10px 16px;
-      background: #0078ff;
-      color: white;
+      background: #cc0000;        /* UGA RED */
+      color: #fff;
       text-decoration: none;
       border-radius: 6px;
       font-size: 14px;
       transition: 0.2s;
+      font-weight: 700;
+      border: 2px solid #000;     /* black accent */
     }
 
     .download-btn:hover {
-      background: #005fcc;
+      background: #e60000;        /* brighter red */
+      color: #fff;
     }
 
     /* FOOTER */
