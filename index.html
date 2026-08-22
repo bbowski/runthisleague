@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Run This League</title>
+  <style>
+    /* LIGHT MODE — Bright Silver Gradient */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f2f2f2, #e6e6e6, #f2f2f2);
+      color: #222;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* DARK MODE — Championship Gold Gradient */
+    body.dark {
+      background: linear-gradient(135deg, #000, #2a2400, #000);
+      color: #eee;
+    }
+
+    /* HEADER */
+    .header {
+      width: 100%;
+      padding: 20px;
+      background: #ffffff; /* crisp */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      text-align: center;
+      border-bottom: 2px solid rgba(0,0,0,0.1);
+    }
+
+    body.dark .header {
+      background: rgba(0,0,0,0.7);
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+    }
+
+    /* BELT IMAGE — no blur in light mode */
+    .belt-logo-large {
+      height: 160px;
+      width: auto;
+      margin-bottom: 10px;
+      filter: none;
+    }
+
+    /* subtle glow only in dark mode */
+    body.dark .belt-logo-large {
+      filter: drop-shadow(0 0 6px rgba(255,255,255,0.4));
+    }
+
+    /* DARKER METALLIC SILVER HEADER TEXT */
+    .header h2 {
+      margin: 0;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      font-size: 40px;
+      background: linear-gradient(90deg, #c0c0c0, #8f8f8f, #b5b5b5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 3px rgba(0,0,0,0.35);
+    }
+
+    #toggleDark {
+      padding: 10px 15px;
+      background: #0078ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    /* MAIN CARD */
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.25);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.15);
+      backdrop-filter: blur(6px);
+      transition: background 0.3s, color 0.3s;
+      color: #222;
+    }
+
+    body.dark .container {
+      background: rgba(30,30,30,0.25);
+      box-shadow: 0 0 30px rgba(255,255,255,0.1);
+      color: #eee;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /* TABLE */
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      background: rgba(255,255,255,0.4);
+      border-radius: 10px;
+      overflow: hidden;
+      color: #222;
+    }
+
+    body.dark table {
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+
+    th, td {
+      padding: 14px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    body.dark th, body.dark td {
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    th {
+      background: #0078ff;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    body.dark th {
+      background: #005fcc;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 10px 16px;
+      background: #0078ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .download-btn:hover {
+      background: #005fcc;
+    }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 20px;
+      color: #222;
+      margin-top: 40px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    body.dark .footer {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="RTL_grok_version.png" class="belt-logo-large" alt="RTL Championship Belt">
+    <h2>RUN THIS LEAGUE</h2>
+    <button id="toggleDark">Toggle Dark Mode</button>
+  </div>
+
+  <div class="container">
+    <h1>Let me tell you something, brother!</h1>
+    <p>Get your copy of the 2025 Run This League data right here.</p>
+
+    <table>
+      <tr>
+        <th>File Name</th>
+        <th>Description</th>
+        <th>Download</th>
+      </tr>
+      <tr>
+        <td>2025_Fantasy_Football_Data.xlsx</td>
+        <td>2025 Fantasy Football Data</td>
+        <td><a class="download-btn" href="2025_Fantasy_Football_Data.xlsx" download>🏈 Download</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    © 2026 Run This League
+  </div>
+
+  <script>
+    const toggle = document.getElementById('toggleDark');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+  </script>
+
+</body>
+</html>
