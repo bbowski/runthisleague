@@ -32,6 +32,7 @@
       top: 0;
       text-align: center;
       border-bottom: 4px solid #cc0000; /* UGA RED */
+      z-index: 1000;
     }
 
     body.dark .header {
@@ -79,6 +80,43 @@
     }
     #toggleDark:hover {
       background: #e60000;        /* slightly brighter red */
+      color: #fff;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      width: 100%;
+      background: #cc0000; /* UGA RED */
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 14px 0;
+      border-bottom: 3px solid #000; /* black accent */
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .navbar a {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 16px;
+      letter-spacing: 1px;
+      transition: 0.2s;
+    }
+
+    .navbar a:hover {
+      color: #ffd700; /* gold highlight */
+    }
+
+    /* DARK MODE NAVBAR */
+    body.dark .navbar {
+      background: #990000; /* darker UGA red */
+      border-bottom: 3px solid #fff;
+    }
+
+    body.dark .navbar a {
       color: #fff;
     }
 
@@ -130,7 +168,6 @@
       color: white;
     }
 
-    /* CLEAN UGA RED TABLE HEADERS */
     th {
       background: #cc0000;        /* UGA RED */
       color: #fff;
@@ -152,7 +189,6 @@
       border-bottom: 1px solid rgba(255,255,255,0.2);
     }
 
-    /* CLEAN UGA RED DOWNLOAD BUTTON */
     .download-btn {
       display: inline-block;
       padding: 10px 16px;
@@ -194,6 +230,14 @@
     <button id="toggleDark">Toggle Dark Mode</button>
   </div>
 
+  <!-- NEW NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="2025_draft_results.html">2025 Draft Results</a>
+    <a href="files/2025_Fantasy_Football_Data.xlsx" download>2025 Data</a>
+    <a href="files/2024_Fantasy_Football_Data.xlsx" download>2024 Data</a>
+  </nav>
+
   <div class="container">
     <h1>Let me tell you something, brother!</h1>
     <p>Get your copy of the 2025 Run This League data right here.</p>
@@ -209,7 +253,7 @@
         <td>2025 Football Season Data</td>
         <td><a class="download-btn" href="files/2025_Fantasy_Football_Data.xlsx" download>🏈 Download</a></td>
       </tr>
-	  <tr>
+      <tr>
         <td>2024_Fantasy_Football_Data.xlsx</td>
         <td>2024 Football Season Data</td>
         <td><a class="download-btn" href="files/2024_Fantasy_Football_Data.xlsx" download>🏈 Download</a></td>
